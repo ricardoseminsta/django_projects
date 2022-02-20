@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+
+<div id="hero-area" class="hero-area-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+              <div class="contents">
+                <div class="container">
+                      <div class="container">
+                        {% if funcionarios %}
+
+                        <h1>FUNCIONARIOS</h1>
+
+                        <table class="table table-dark table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col">ID</th>
+                              <th scope="col">Nome</th>
+                              <th scope="col">Cargo</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {% for f in funcionarios %}
+                          <tr>
+                              <th scope="row">{{ f.id }}</th>
+                              <td><a href="{% url 'funcionario' f.id %}">{{ f.nome }}</a></td>
+                              <td>{{ f.cargo }}</td>
+                            </tr>
+                          {% endfor %}
+                          </tbody>
+                        </table>
+                        {% endif %}
+                          </div>
+                    </div>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+              <div class="intro-img">
+                <img class="img-fluid" src="{% static 'img/intro-mobile.png' %}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}

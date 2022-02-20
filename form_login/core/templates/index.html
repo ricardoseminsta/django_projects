@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+
+{% block content %}
+<ul class="list-inline">
+    <li class="list-inline-item">
+        <a href="#">Index</a>
+    </li>
+    <li class="list-inline-item">
+        <a href="{% url 'login' %}">Login</a>
+    </li>
+    <li class="list-inline-item">
+        <a href="{% url 'register' %}">Register</a>
+    </li>
+</ul>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% load bootstrap5 %}
+{% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% bootstrap_css %}
+        <!-- Css do projeto -->
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <!-- JS bundle with popper -->
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="container col-11 col-md-9" id="form-container">
+        {% block content %} {% endblock %}
+        </div>
+    {% bootstrap_javascript %}
+
+    </body>
+    </html>
